@@ -1,5 +1,10 @@
 package com.nt;
 
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
+
 public class CheckPrefix {
     public static void main(String[] args) {
         String sentence="i love eating burger";
@@ -8,12 +13,26 @@ public class CheckPrefix {
     }
     public static int checkPrefix(String sentence,String prefix){
         String[] words=sentence.split(" ");
-        System.out.println("words = " + words[2]);
-        for (int i = 0; i < words.length; i++) {
+        //using traditional for loop
+        /* for (int i = 0; i < words.length; i++) {
             if (words[i].startsWith(prefix))
                 return i+1;
-              }
-        return -1;
+              }//for*/
+
+        //using for each loop
+       /* int index=0;
+        for (String w:words){
+            if (w.startsWith(prefix))
+                return index+1;
+            index++;
+        }*/
+
+        //using java 8
+       int index=IntStream.range(0, words.length)
+                .filter(i -> words[i].startsWith(prefix))
+                .findFirst().orElse(-1);
+        return index!=1?index+1:-1;
+
     }
 
 }

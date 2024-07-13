@@ -33,6 +33,7 @@ public class ContainsDuplicate {
         }
         return false;
     }
+
 /*same approach using Hashmap*/
     public static boolean isContain(int[] arr) {
         Map<Integer, Integer> hm = new HashMap<>();
