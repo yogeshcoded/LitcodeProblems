@@ -1,4 +1,4 @@
-package com.nt;
+package com.nt.leetcode;
 
 /*
  * Find the minimum element.

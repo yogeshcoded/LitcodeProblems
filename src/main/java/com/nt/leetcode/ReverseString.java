@@ -1,9 +1,4 @@
-package com.nt;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+package com.nt.leetcode;
 
 public class ReverseString {
     public static void main(String[] args) {

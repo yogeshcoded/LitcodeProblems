@@ -1,4 +1,4 @@
-package com.nt;
+package com.nt.leetcode;
 
 public class MaxConsecutiveNumberBinaryArray {
     public static void main(String[] args) {

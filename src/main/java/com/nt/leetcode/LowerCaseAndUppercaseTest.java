@@ -1,4 +1,4 @@
-package com.nt;/*
+package com.nt.leetcode;/*
 *Convert Uppercase letter to lowercase
 * and vice versa
 **/

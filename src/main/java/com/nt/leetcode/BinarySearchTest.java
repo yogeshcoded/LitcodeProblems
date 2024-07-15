@@ -1,4 +1,4 @@
-package com.nt;
+package com.nt.leetcode;
 
 public class BinarySearchTest {
     public static void main(String[] args) {

@@ -1,8 +1,5 @@
-package com.nt;
+package com.nt.leetcode;
 
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
 public class CheckPrefix {
