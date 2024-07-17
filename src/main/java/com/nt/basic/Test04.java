@@ -2,22 +2,17 @@ package com.nt.basic;
 
 public class Test04 {
     public static void main(String[] args) {
-        String name="my name is raja";
+        String name = " my name  is raja ";
         System.out.println(reverse(name));
 
     }
-    public static String reverse(String st){
-        String[] words=st.split(" ");
-        StringBuilder sb=new StringBuilder();
-        /*int i = words.length-1;
-        while (i >=0) {
-            sb.append(words[i]);
-            sb.append(" ");
-            i--;
-        }*/
-        for (String s:words){
-            sb.insert(0,s+" ");
+
+    public static String reverse(String st) {
+        String[] words = st.split(" +");
+        StringBuilder sb = new StringBuilder();
+        for (String s : words) {
+            sb.insert(0, s + " ");
         }
-        return sb.toString();
+        return sb.toString().trim();
     }
 }
