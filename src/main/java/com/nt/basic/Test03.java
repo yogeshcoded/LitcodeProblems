@@ -7,7 +7,7 @@ public class Test03{
 
         System.out.println(findMin(arr));
         System.out.println(findMax(arr));
-       // System.out.println(findMedElement(arr));
+       System.out.println(findMedElement(arr));
     }
     public static int findMin(int[] arr){
         int min=arr[0];
@@ -19,18 +19,14 @@ public class Test03{
     }
     public static int findMax(int[] arr){
         int max=arr[0];
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i]>max)
-//                max=arr[i];
-//        }
-         for (int i:arr){
-             if (i>max)
-                 max=i;
-         }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]>max)
+                max=arr[i];
+        }
         return max;
     }
     public static int findMedElement(int[] arr){
-        return arr[0+((arr.length-1)-0)/2];
+        return arr[(arr.length - 1) / 2];
 
 }
 }
