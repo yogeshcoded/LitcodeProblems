@@ -7,9 +7,9 @@ public class Test06BubbleSortAlgorithm {
         int[] arr = {35, 5, 7, 45, 60, 4};
         int[] a = {5, 7, 45, 60};
         //call sorting method
-        bubbleSort(a);
+        bubbleSort(arr);
         //call print method
-        printArray(a);
+        printArray(arr);
 
     }//main()
 
