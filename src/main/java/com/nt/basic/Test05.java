@@ -1,7 +1,5 @@
 package com.nt.basic;
 
-import java.util.Arrays;
-
 public class Test05 {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};  //rotate 3 times k=3
