@@ -1,37 +1,37 @@
-package com.nt.linkedlist;
+package com.nt.linkedlist.impl;
 
 /*
- *Single linked list
+ * Single linked list implementation related to collection
  */
-public class LL {
-  private Node head;
+public class SingleLinkedList<E> {
+  private Node<E> head;
    private int size;
 
-    public LL() {
+    public SingleLinkedList() {
         this.size = 0;
         head = null;
     }
 
-   private static class Node {
-       public int data;
-       private Node next;
+   private static class Node<E>{
+       private E data;
+       private Node<E> next;
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+       public Node(E data) {
+           this.data = data;
+           this.next=null;
+       }
+   }
 
     public int size() {
         return size;
     }
 
-    public void add(int e) {
+    public void add(E e) {
         addLast(e);
     }
 
-    public void addFirst(int e) {
-        Node newNode = new Node(e);
+    public void addFirst(E e) {
+        Node<E> newNode = new Node<>(e);
         if (head == null)
             head = newNode;
         else {
@@ -41,12 +41,12 @@ public class LL {
         size++;
     }
 
-    public void addLast(int e) {
-        Node newNode = new Node(e);
+    public void addLast(E e) {
+        Node<E> newNode = new Node<>(e);
         if (head == null)
             head = newNode;
         else {
-            Node lastNode = head;
+            Node<E> lastNode = head;
             while (lastNode.next != null) {
                 lastNode = lastNode.next;
             }
@@ -55,10 +55,10 @@ public class LL {
         size++;
     }
 
-    public void addAt(int index, int e) {
+    public void addAt(int index, E e) {
         checkINdex(index);
-        Node newNode = new Node(e);
-        Node temp = head;
+        Node<E> newNode = new Node<>(e);
+        Node<E> temp = head;
         if (index == 0)
             addFirst(e);
         else if (index == size)
@@ -76,7 +76,9 @@ public class LL {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Node curNode = head;
+        if (head==null)
+            return "[]";
+        Node<E> curNode = head;
         sb.append("[");
         while (curNode != null) {
             sb.append(curNode.data).append(", ");
@@ -89,11 +91,11 @@ public class LL {
         return sb.toString();
     }
 
-    public int getAt(int index) {
+    public E getAt(int index) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException(index);
         else {
-            Node temp = head;
+            Node<E> temp = head;
             for (int i = 1; i <= index; i++) {
                 temp = temp.next;
             }
@@ -107,7 +109,7 @@ public class LL {
     }
 
     public void removeLast() {
-            Node curNode = head;
+            Node<E> curNode = head;
             while (curNode.next.next != null) {
                 curNode = curNode.next;
             }
@@ -122,7 +124,7 @@ public class LL {
        else if (index==size-1)
            removeLast();
        else {
-           Node curNode = head;
+           Node<E> curNode = head;
            for (int i = 1; i <= index-1; i++) {
                curNode = curNode.next;
            }

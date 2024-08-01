@@ -1,37 +1,37 @@
-package com.nt.linkedlist;
+package com.nt.linkedlist.impl;
 
 /*
  *Single linked list
  */
-public class SingleLinkedList<E> {
-  private Node<E> head;
+public class LL {
+  private Node head;
    private int size;
 
-    public SingleLinkedList() {
+    public LL() {
         this.size = 0;
         head = null;
     }
 
-   private static class Node<E>{
-       private E data;
-       private Node<E> next;
+   private static class Node {
+       public int data;
+       private Node next;
 
-       public Node(E data) {
-           this.data = data;
-           this.next=null;
-       }
-   }
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
 
     public int size() {
         return size;
     }
 
-    public void add(E e) {
+    public void add(int e) {
         addLast(e);
     }
 
-    public void addFirst(E e) {
-        Node<E> newNode = new Node<>(e);
+    public void addFirst(int e) {
+        Node newNode = new Node(e);
         if (head == null)
             head = newNode;
         else {
@@ -41,12 +41,12 @@ public class SingleLinkedList<E> {
         size++;
     }
 
-    public void addLast(E e) {
-        Node<E> newNode = new Node<>(e);
+    public void addLast(int e) {
+        Node newNode = new Node(e);
         if (head == null)
             head = newNode;
         else {
-            Node<E> lastNode = head;
+            Node lastNode = head;
             while (lastNode.next != null) {
                 lastNode = lastNode.next;
             }
@@ -55,10 +55,10 @@ public class SingleLinkedList<E> {
         size++;
     }
 
-    public void addAt(int index, E e) {
+    public void addAt(int index, int e) {
         checkINdex(index);
-        Node<E> newNode = new Node<>(e);
-        Node<E> temp = head;
+        Node newNode = new Node(e);
+        Node temp = head;
         if (index == 0)
             addFirst(e);
         else if (index == size)
@@ -76,9 +76,7 @@ public class SingleLinkedList<E> {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (head==null)
-            return "[]";
-        Node<E> curNode = head;
+        Node curNode = head;
         sb.append("[");
         while (curNode != null) {
             sb.append(curNode.data).append(", ");
@@ -91,11 +89,11 @@ public class SingleLinkedList<E> {
         return sb.toString();
     }
 
-    public E getAt(int index) {
+    public int getAt(int index) {
         if (index < 0 || index > size)
             throw new IndexOutOfBoundsException(index);
         else {
-            Node<E> temp = head;
+            Node temp = head;
             for (int i = 1; i <= index; i++) {
                 temp = temp.next;
             }
@@ -109,7 +107,7 @@ public class SingleLinkedList<E> {
     }
 
     public void removeLast() {
-            Node<E> curNode = head;
+            Node curNode = head;
             while (curNode.next.next != null) {
                 curNode = curNode.next;
             }
@@ -124,7 +122,7 @@ public class SingleLinkedList<E> {
        else if (index==size-1)
            removeLast();
        else {
-           Node<E> curNode = head;
+           Node curNode = head;
            for (int i = 1; i <= index-1; i++) {
                curNode = curNode.next;
            }

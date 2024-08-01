@@ -1,5 +1,7 @@
-package com.nt.linkedlist;
+package com.nt.linkedlist.test;
 
+
+import com.nt.linkedlist.impl.LL;
 
 public class TestLL {
     public static void main(String[] args) {

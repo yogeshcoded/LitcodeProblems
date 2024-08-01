@@ -1,7 +1,9 @@
-package com.nt.linkedlist;
+package com.nt.linkedlist.test;
 
 
-public class TestSIngleLL {
+import com.nt.linkedlist.impl.SingleLinkedList;
+
+public class SingleLinkedListWithCollectionBase {
     public static void main(String[] args) {
         SingleLinkedList<Object> list = new SingleLinkedList<>();
 
