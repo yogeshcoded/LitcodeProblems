@@ -76,6 +76,8 @@ public class SingleLinkedList<E> {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        if (head==null)
+            return "[]";
         Node<E> curNode = head;
         sb.append("[");
         while (curNode != null) {
